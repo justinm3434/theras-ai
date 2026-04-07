@@ -6,7 +6,7 @@
     <title>TherasAI</title>
     <meta name="description" content="TherasAI — Inference, reimagined.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,8 +23,8 @@
             --accent: #a51c30;
             --accent-light: #c42038;
             --accent-glow: rgba(165, 28, 48, 0.12);
-            --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'Space Mono', 'SF Mono', monospace;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
         }
 
         html { scroll-behavior: smooth; }
@@ -370,15 +370,7 @@
         <nav>
             <div class="nav-left">
                 <div class="logo-mark">
-                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="32" height="32" rx="6" stroke="#a51c30" stroke-width="1.5" fill="none"/>
-                        <circle cx="18" cy="18" r="9" stroke="#a51c30" stroke-width="1.5" fill="none"/>
-                        <line x1="9" y1="18" x2="27" y2="18" stroke="#a51c30" stroke-width="1.5"/>
-                        <line x1="18" y1="2" x2="18" y2="9" stroke="#a51c30" stroke-width="1" opacity="0.5"/>
-                        <line x1="18" y1="27" x2="18" y2="34" stroke="#a51c30" stroke-width="1" opacity="0.5"/>
-                        <line x1="2" y1="18" x2="9" y2="18" stroke="#a51c30" stroke-width="1" opacity="0.5"/>
-                        <line x1="27" y1="18" x2="34" y2="18" stroke="#a51c30" stroke-width="1" opacity="0.5"/>
-                    </svg>
+                    <img src="public/images/theras-logo.png" alt="TherasAI" style="width:100%;height:100%;object-fit:contain;">
                 </div>
                 <div class="logo-text">TherasAI</div>
             </div>
@@ -393,7 +385,7 @@
             <div class="hero-glow"></div>
             <div class="hero-inner">
                 <div class="hero-brand">Theras<span class="accent">AI</span></div>
-                <p class="hero-tagline">Inference, reimagined.</p>
+                <p class="hero-tagline">Reimagining inference.</p>
                 <div class="hero-cta">
                     <a href="#thesis">
                         Learn More
@@ -419,7 +411,7 @@
                 TherasAI is building inference hardware that exploits this insight. We encode 
                 stable model parameters directly into the metal interconnect layers of the chip — 
                 eliminating the memory wall entirely. No DRAM reads. No bandwidth bottleneck. 
-                Weights become part of the silicon itself.
+                Weights become part of the chip itself.
             </p>
             <p>
                 The result is inference that's orders of magnitude faster and more energy-efficient — 
@@ -477,11 +469,7 @@
         <footer>
             <div class="footer-left">
                 <div class="footer-mark">
-                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="32" height="32" rx="6" stroke="#a51c30" stroke-width="1.5" fill="none"/>
-                        <circle cx="18" cy="18" r="9" stroke="#a51c30" stroke-width="1.5" fill="none"/>
-                        <line x1="9" y1="18" x2="27" y2="18" stroke="#a51c30" stroke-width="1.5"/>
-                    </svg>
+                    <img src="public/images/theras-logo.png" alt="TherasAI" style="width:100%;height:100%;object-fit:contain;">
                 </div>
                 <span class="footer-name">TherasAI</span>
             </div>
