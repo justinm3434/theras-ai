@@ -6,7 +6,7 @@
     <title>TherasAI</title>
     <meta name="description" content="TherasAI. Reimagining inference.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,7 +23,7 @@
             --accent: #a51c30;
             --accent-light: #c42038;
             --accent-glow: rgba(165, 28, 48, 0.12);
-            --font-body: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'IBM Plex Mono', 'SF Mono', monospace;
             --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
         }
 
@@ -72,12 +72,12 @@
         }
         .logo-text {
             font-size: 1.3rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
+        }
+        .logo-text .ai {
+            color: var(--accent-light);
         }
         .nav-links {
             display: flex;
@@ -163,12 +163,7 @@
             position: relative;
         }
         .hero-brand .accent {
-            background: linear-gradient(135deg, #c42038, #ff4d6a, #c42038);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 6s ease-in-out infinite;
+            color: var(--accent-light);
         }
         .hero-brand::after {
             content: '';
@@ -389,11 +384,11 @@
         footer .footer-mark { width: 20px; height: 20px; }
         footer .footer-name {
             font-size: 0.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        footer .footer-name .ai {
+            color: var(--accent-light);
         }
         footer .footer-copy {
             font-family: var(--font-mono);
@@ -423,7 +418,7 @@
                 <div class="logo-mark">
                     <img src="public/images/theras-logo.png" alt="TherasAI" style="width:100%;height:100%;object-fit:contain;">
                 </div>
-                <div class="logo-text">TherasAI</div>
+                <div class="logo-text">Theras<span class="ai">AI</span></div>
             </div>
             <div class="nav-links">
                 <a href="#thesis">About</a>
@@ -523,7 +518,7 @@
                 <div class="footer-mark">
                     <img src="public/images/theras-logo.png" alt="TherasAI" style="width:100%;height:100%;object-fit:contain;">
                 </div>
-                <span class="footer-name">TherasAI</span>
+                <span class="footer-name">Theras<span class="ai">AI</span></span>
             </div>
             <div class="footer-copy">© 2026 TherasAI. All rights reserved.</div>
         </footer>
