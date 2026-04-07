@@ -76,7 +76,6 @@
             font-weight: 700;
             letter-spacing: 0.02em;
             color: var(--text-primary);
-            text-transform: uppercase;
         }
         .logo-text .ai {
             color: var(--accent-light);
@@ -163,7 +162,6 @@
             font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 700;
             letter-spacing: 0.12em;
-            text-transform: uppercase;
             line-height: 1;
             margin-bottom: 1.5rem;
             opacity: 0;
@@ -223,21 +221,7 @@
 
 
 
-        .hero-scanline {
-            position: absolute;
-            left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 10%, rgba(165,28,48,0.15) 50%, transparent 90%);
-            pointer-events: none;
-            animation: scan 5s linear infinite;
-            z-index: 0;
-        }
-        @keyframes scan {
-            0% { top: 10%; opacity: 0; }
-            5% { opacity: 1; }
-            95% { opacity: 1; }
-            100% { top: 90%; opacity: 0; }
-        }
+
 
 
 
@@ -395,7 +379,7 @@
 
         /* ---- Backed By ---- */
         .backed {
-            padding: 4rem 3rem;
+            padding: 5rem 3rem;
             text-align: center;
         }
         .backed-label {
@@ -404,7 +388,23 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-dim);
-            margin-bottom: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .backed-logo {
+            margin-bottom: 1rem;
+        }
+        .backed-logo a {
+            display: inline-block;
+        }
+        .backed-logo img {
+            height: 40px;
+            width: auto;
+            opacity: 0.7;
+            filter: brightness(0) invert(1);
+            transition: opacity 0.3s;
+        }
+        .backed-logo img:hover {
+            opacity: 1;
         }
         .backed-name {
             font-size: 1.4rem;
@@ -473,7 +473,6 @@
             font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.02em;
-            text-transform: uppercase;
             color: var(--text-primary);
         }
         footer .footer-name .ai {
@@ -526,7 +525,7 @@
             <div class="hero-corner bl"></div>
             <div class="hero-corner br"></div>
 
-            <div class="hero-scanline"></div>
+
             <div class="hero-ticker left">INFERENCE // HARDWIRED // 2026</div>
             <div class="hero-ticker right">PARAMETERS // IN // METAL</div>
             <div class="hero-inner">
@@ -593,8 +592,10 @@
         <!-- Backed By -->
         <section class="backed">
             <div class="backed-label">Backed By</div>
-            <div class="backed-name">
-                <a href="https://www.linkventures.com" target="_blank" rel="noopener">Link Ventures</a>
+            <div class="backed-logo">
+                <a href="https://www.linkventures.com" target="_blank" rel="noopener">
+                    <img src="public/images/lv-logo.png" alt="Link Ventures">
+                </a>
             </div>
         </section>
 
