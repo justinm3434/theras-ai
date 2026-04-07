@@ -6,7 +6,7 @@
     <title>TherasAI</title>
     <meta name="description" content="TherasAI — Inference, reimagined.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,7 +23,7 @@
             --accent: #a51c30;
             --accent-light: #c42038;
             --accent-glow: rgba(165, 28, 48, 0.12);
-            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
         }
 
@@ -122,6 +122,20 @@
             border-radius: 50%;
             filter: blur(100px);
             animation: glow-pulse 8s ease-in-out infinite;
+        }
+        .hero-watermark {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(12rem, 22vw, 28rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(165, 28, 48, 0.07);
+            white-space: nowrap;
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
         }
         @keyframes glow-pulse {
             0%, 100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1); }
@@ -383,6 +397,7 @@
         <!-- Hero -->
         <section class="hero">
             <div class="hero-glow"></div>
+            <div class="hero-watermark">THERAS</div>
             <div class="hero-inner">
                 <div class="hero-brand">Theras<span class="accent">AI</span></div>
                 <p class="hero-tagline">Reimagining inference.</p>
