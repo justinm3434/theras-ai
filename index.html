@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TherasAI</title>
-    <meta name="description" content="TherasAI — Inference, reimagined.">
+    <meta name="description" content="TherasAI. Reimagining inference.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -23,7 +23,7 @@
             --accent: #a51c30;
             --accent-light: #c42038;
             --accent-glow: rgba(165, 28, 48, 0.12);
-            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
         }
 
@@ -72,8 +72,12 @@
         }
         .logo-text {
             font-size: 1.3rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .nav-links {
             display: flex;
@@ -383,7 +387,14 @@
             gap: 0.5rem;
         }
         footer .footer-mark { width: 20px; height: 20px; }
-        footer .footer-name { font-size: 0.8rem; font-weight: 500; }
+        footer .footer-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         footer .footer-copy {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -443,19 +454,19 @@
             <div class="section-label">Our Thesis</div>
             <h2>Training happens once.<br>Inference happens forever.</h2>
             <p>
-                Today's AI infrastructure runs inference on hardware designed for training — 
-                general-purpose chips that spend most of their energy just moving data around. 
+                Today's AI infrastructure runs inference on hardware designed for training. 
+                General-purpose chips that spend most of their energy just moving data around. 
                 But once a model is trained, its core parameters converge. The fundamental 
                 representations stabilize. The weights don't change.
             </p>
             <p>
                 TherasAI is building inference hardware that exploits this insight. We encode 
-                stable model parameters directly into the metal interconnect layers of the chip — 
+                stable model parameters directly into the metal interconnect layers of the chip, 
                 eliminating the memory wall entirely. No DRAM reads. No bandwidth bottleneck. 
                 Weights become part of the chip itself.
             </p>
             <p>
-                The result is inference that's orders of magnitude faster and more energy-efficient — 
+                The result is inference that's orders of magnitude faster and more energy-efficient, 
                 at a fraction of the cost per token.
             </p>
         </section>
@@ -468,17 +479,17 @@
                 <div class="feature-card">
                     <div class="feature-num">01</div>
                     <h3>Parameters in Metal</h3>
-                    <p>Core model weights are physically encoded in the final metal layers during fabrication. The chip doesn't read the weights — it <em>is</em> the weights.</p>
+                    <p>Core model weights are physically encoded in the final metal layers during fabrication. The chip doesn't read the weights. It <em>is</em> the weights.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">02</div>
                     <h3>Weeks, Not Years</h3>
-                    <p>Base dies are pre-fabricated in bulk. Only the final metal layers are customized per model — taking the timeline from 18 months to weeks.</p>
+                    <p>Base dies are pre-fabricated in bulk. Only the final metal layers are customized per model, taking the timeline from 18 months to weeks.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">03</div>
                     <h3>The 95% Problem</h3>
-                    <p>Training is 5% of total AI compute. Inference is the other 95% — and it's running on hardware that wasn't built for it. We're building hardware that is.</p>
+                    <p>Training is 5% of total AI compute. Inference is the other 95%, and it's running on hardware that wasn't built for it. We're building hardware that is.</p>
                 </div>
             </div>
         </section>
