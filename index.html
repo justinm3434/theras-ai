@@ -129,7 +129,7 @@
             transform: translate(-50%, -50%);
             width: clamp(500px, 80vw, 1100px);
             height: clamp(500px, 80vw, 1100px);
-            opacity: 0.15;
+            opacity: 0.10;
             user-select: none;
             pointer-events: none;
             z-index: 0;
@@ -149,22 +149,46 @@
             max-width: 800px;
         }
         .hero-brand {
-            font-size: clamp(4rem, 10vw, 8rem);
-            font-weight: 700;
-            letter-spacing: -0.04em;
+            font-size: clamp(4.5rem, 12vw, 9rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
             line-height: 1;
             margin-bottom: 1.5rem;
             opacity: 0;
             animation: fadeIn 1s ease 0.2s forwards;
+            position: relative;
         }
         .hero-brand .accent {
-            color: var(--accent-light);
+            background: linear-gradient(135deg, #c42038, #ff4d6a, #c42038);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 6s ease-in-out infinite;
+        }
+        .hero-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            border-radius: 2px;
+        }
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         .hero-tagline {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: var(--text-secondary);
-            font-weight: 300;
-            letter-spacing: 0.02em;
+            font-family: var(--font-mono);
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            color: var(--text-dim);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 2rem;
             margin-bottom: 3rem;
             opacity: 0;
             animation: fadeIn 1s ease 0.5s forwards;
