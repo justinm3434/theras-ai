@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theras AI — Next-Generation Inference Hardware</title>
+    <meta name="description" content="Theras AI is building the future of hard-wired inference compute. Parameters in metal. Inference forever.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        metal: {
+                            50: '#f7f7f8',
+                            100: '#eeeef0',
+                            200: '#d9d9de',
+                            300: '#b8b8c1',
+                            400: '#91919f',
+                            500: '#737384',
+                            600: '#5d5d6c',
+                            700: '#4c4c58',
+                            800: '#41414b',
+                            900: '#393941',
+                            950: '#18181b',
+                        },
+                        forge: {
+                            400: '#f97316',
+                            500: '#ea580c',
+                            600: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f7f7f8;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glow {
+            box-shadow: 0 0 60px rgba(249, 115, 22, 0.15);
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .metal-border {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        .pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#09090b]/80 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Placeholder logo mark -->
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-forge-400 to-red-500 flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">θ</span>
+                </div>
+                <span class="text-xl font-bold tracking-tight">Theras<span class="text-metal-400 font-normal ml-1">AI</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm text-metal-400">
+                <a href="#vision" class="hover:text-white transition-colors">Vision</a>
+                <a href="#technology" class="hover:text-white transition-colors">Technology</a>
+                <a href="#team" class="hover:text-white transition-colors">Team</a>
+                <a href="#join" class="px-4 py-2 bg-forge-500 hover:bg-forge-400 text-white rounded-lg font-medium transition-colors">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
+        <!-- Ambient glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-forge-500/10 rounded-full blur-[120px] pulse-slow"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-forge-500/20 bg-forge-500/5 text-forge-400 text-sm font-mono mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-forge-400 animate-pulse"></span>
+                Now Building
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6">
+                Parameters<br>
+                <span class="gradient-text">Cast in Metal</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-metal-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Training happens once. Inference happens forever.<br>
+                Theras AI is building the next generation of hard-wired inference compute — 
+                where model weights are permanently encoded in silicon.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#join" class="px-8 py-3.5 bg-forge-500 hover:bg-forge-400 text-white rounded-xl font-semibold text-lg transition-all hover:shadow-lg hover:shadow-forge-500/20">
+                    Join the Founding Team
+                </a>
+                <a href="#vision" class="px-8 py-3.5 border border-white/10 hover:border-white/20 text-white rounded-xl font-semibold text-lg transition-all">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <!-- Bottom fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#09090b] to-transparent"></div>
+    </section>
+
+    <!-- Stats bar -->
+    <section class="border-y border-white/5 bg-white/[0.02]">
+        <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-bold text-forge-400 font-mono">95%</div>
+                <div class="text-sm text-metal-400 mt-1">of compute is inference</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-forge-400 font-mono">1000×</div>
+                <div class="text-sm text-metal-400 mt-1">efficiency potential</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-forge-400 font-mono">4 mo</div>
+                <div class="text-sm text-metal-400 mt-1">fabrication cycle</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-forge-400 font-mono">∞</div>
+                <div class="text-sm text-metal-400 mt-1">inference runs per chip</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section id="vision" class="py-24 md:py-32">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                    The world optimizes for training.<br>
+                    <span class="text-metal-400">We optimize for everything after.</span>
+                </h2>
+                <p class="text-lg text-metal-300 leading-relaxed mb-8">
+                    Today's AI infrastructure treats inference as an afterthought — running trillion-parameter models on general-purpose hardware designed for flexibility, not speed. But once a model is trained, its weights are fixed. Why run them on hardware that doesn't know that?
+                </p>
+                <p class="text-lg text-metal-300 leading-relaxed">
+                    Theras AI encodes model parameters directly into the physical substrate — weights become part of the chip itself. The result: inference that's orders of magnitude faster, cheaper, and more energy-efficient. No memory bottlenecks. No weight loading. Just permanent, instantaneous computation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="technology" class="py-24 md:py-32 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-16">How It Works</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-forge-500/10 flex items-center justify-center mb-6">
+                        <span class="text-forge-400 text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hard-Wired Weights</h3>
+                    <p class="text-metal-400 leading-relaxed">
+                        Model parameters are encoded into the final metal layers during fabrication. No DRAM reads. No memory bandwidth wall. Weights are the chip.
+                    </p>
+                </div>
+                
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-forge-500/10 flex items-center justify-center mb-6">
+                        <span class="text-forge-400 text-2xl">🔥</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inference-Native Silicon</h3>
+                    <p class="text-metal-400 leading-relaxed">
+                        Purpose-built for the forward pass. Every transistor is dedicated to inference — no wasted silicon on training flexibility you'll never use.
+                    </p>
+                </div>
+                
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-forge-500/10 flex items-center justify-center mb-6">
+                        <span class="text-forge-400 text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sustainable Scale</h3>
+                    <p class="text-metal-400 leading-relaxed">
+                        Dramatically lower power consumption per inference. As AI scales to billions of users, the energy equation has to change. We're changing it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="py-24 md:py-32 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">The Team</h2>
+            <p class="text-lg text-metal-400 mb-16 max-w-2xl">
+                We're assembling a founding team of exceptional young hardware engineers from the best programs in the country.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Placeholder team cards -->
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-metal-700 to-metal-800 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">🔧</span>
+                    </div>
+                    <h3 class="text-lg font-bold">Founding Engineers</h3>
+                    <p class="text-sm text-metal-400 mt-2">Princeton ECE '26</p>
+                    <p class="text-sm text-metal-500 mt-1">Hardware architecture & chip validation</p>
+                </div>
+                
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-metal-700 to-metal-800 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">⚙️</span>
+                    </div>
+                    <h3 class="text-lg font-bold">Founding Engineers</h3>
+                    <p class="text-sm text-metal-400 mt-2">Princeton ECE '26</p>
+                    <p class="text-sm text-metal-500 mt-1">Silicon design & verification</p>
+                </div>
+                
+                <div class="metal-border rounded-2xl p-8 bg-white/[0.02] text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-metal-700 to-metal-800 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">💡</span>
+                    </div>
+                    <h3 class="text-lg font-bold">Founding Engineers</h3>
+                    <p class="text-sm text-metal-400 mt-2">Princeton ECE '26</p>
+                    <p class="text-sm text-metal-500 mt-1">ML systems & compiler infrastructure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Backed By -->
+    <section class="py-24 md:py-32 border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm font-mono text-metal-500 uppercase tracking-widest mb-8">Backed By</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 text-metal-500">
+                <span class="text-xl font-semibold hover:text-white transition-colors">Link Ventures</span>
+                <!-- Add more backers as confirmed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Join / CTA -->
+    <section id="join" class="py-24 md:py-32 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-forge-500/5 rounded-full blur-[100px]"></div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                Build the future of compute.
+            </h2>
+            <p class="text-lg text-metal-300 mb-10 leading-relaxed">
+                We're looking for exceptional hardware engineers and systems architects to join the founding team. 
+                If you think in transistors, dream in architectures, and want to build something that matters — we want to talk.
+            </p>
+            
+            <div class="metal-border rounded-2xl p-8 bg-white/[0.02] max-w-md mx-auto glow">
+                <h3 class="text-lg font-bold mb-2">Interested?</h3>
+                <p class="text-metal-400 text-sm mb-6">Reach out to learn more about founding team roles.</p>
+                <a href="mailto:jmilligan@linkstudio.ai" class="inline-flex px-8 py-3.5 bg-forge-500 hover:bg-forge-400 text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-forge-500/20">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-forge-400 to-red-500 flex items-center justify-center">
+                    <span class="text-white font-bold text-xs">θ</span>
+                </div>
+                <span class="text-sm font-semibold">Theras AI</span>
+            </div>
+            <p class="text-sm text-metal-500">© 2026 Theras AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
