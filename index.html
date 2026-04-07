@@ -6,7 +6,7 @@
     <title>TherasAI</title>
     <meta name="description" content="TherasAI. Reimagining inference.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -71,7 +71,7 @@
             width: 36px; height: 36px;
         }
         .logo-text {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 0.02em;
@@ -155,7 +155,7 @@
             max-width: 800px;
         }
         .hero-brand {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: clamp(5rem, 14vw, 11rem);
             font-weight: 700;
             letter-spacing: 0.04em;
@@ -196,57 +196,134 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 30%;
+            width: 35%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(165,28,48,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(165,28,48,0.4), transparent);
         }
         .hero-lines::before { left: 0; }
         .hero-lines::after { right: 0; }
 
         .hero-corner {
             position: absolute;
-            width: 40px; height: 40px;
-            border-color: rgba(165,28,48,0.15);
+            width: 60px; height: 60px;
+            border-color: rgba(165,28,48,0.3);
             border-style: solid;
             border-width: 0;
             pointer-events: none;
+            z-index: 0;
         }
-        .hero-corner.tl { top: 20vh; left: 8vw; border-top-width: 1px; border-left-width: 1px; }
-        .hero-corner.tr { top: 20vh; right: 8vw; border-top-width: 1px; border-right-width: 1px; }
-        .hero-corner.bl { bottom: 15vh; left: 8vw; border-bottom-width: 1px; border-left-width: 1px; }
-        .hero-corner.br { bottom: 15vh; right: 8vw; border-bottom-width: 1px; border-right-width: 1px; }
+        .hero-corner.tl { top: 18vh; left: 6vw; border-top-width: 2px; border-left-width: 2px; }
+        .hero-corner.tr { top: 18vh; right: 6vw; border-top-width: 2px; border-right-width: 2px; }
+        .hero-corner.bl { bottom: 12vh; left: 6vw; border-bottom-width: 2px; border-left-width: 2px; }
+        .hero-corner.br { bottom: 12vh; right: 6vw; border-bottom-width: 2px; border-right-width: 2px; }
 
         .hero-dot {
             position: absolute;
-            width: 4px; height: 4px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--accent);
-            opacity: 0.3;
             pointer-events: none;
         }
-        .hero-dot:nth-child(1) { top: 25vh; left: 15vw; animation: pulse-dot 3s ease-in-out infinite; }
-        .hero-dot:nth-child(2) { top: 35vh; right: 12vw; animation: pulse-dot 3s ease-in-out 1s infinite; }
-        .hero-dot:nth-child(3) { bottom: 25vh; left: 20vw; animation: pulse-dot 3s ease-in-out 2s infinite; }
-        .hero-dot:nth-child(4) { bottom: 30vh; right: 18vw; animation: pulse-dot 3s ease-in-out 0.5s infinite; }
+        .hero-dot:nth-child(1) { top: 22vh; left: 12vw; animation: pulse-dot 2.5s ease-in-out infinite; }
+        .hero-dot:nth-child(2) { top: 40vh; right: 10vw; animation: pulse-dot 2.5s ease-in-out 0.8s infinite; }
+        .hero-dot:nth-child(3) { bottom: 22vh; left: 18vw; animation: pulse-dot 2.5s ease-in-out 1.6s infinite; }
+        .hero-dot:nth-child(4) { bottom: 35vh; right: 15vw; animation: pulse-dot 2.5s ease-in-out 0.4s infinite; }
+        .hero-dot:nth-child(5) { top: 30vh; left: 25vw; animation: pulse-dot 3s ease-in-out 1.2s infinite; }
+        .hero-dot:nth-child(6) { bottom: 28vh; right: 25vw; animation: pulse-dot 3s ease-in-out 2s infinite; }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
+            0%, 100% { opacity: 0.2; transform: scale(1); box-shadow: 0 0 0 rgba(165,28,48,0); }
+            50% { opacity: 0.8; transform: scale(1.8); box-shadow: 0 0 12px rgba(165,28,48,0.4); }
         }
 
         .hero-scanline {
             position: absolute;
             left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 20%, rgba(165,28,48,0.08) 50%, transparent 80%);
+            height: 2px;
+            background: linear-gradient(90deg, transparent 10%, rgba(165,28,48,0.15) 50%, transparent 90%);
             pointer-events: none;
-            animation: scan 8s linear infinite;
+            animation: scan 5s linear infinite;
+            z-index: 0;
         }
         @keyframes scan {
-            0% { top: 15%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 85%; opacity: 0; }
+            0% { top: 10%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 90%; opacity: 0; }
+        }
+
+        /* Rotating ring around the watermark logo */
+        .hero-ring {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(450px, 70vw, 950px);
+            height: clamp(450px, 70vw, 950px);
+            border: 1px solid rgba(165,28,48,0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: spin-slow 60s linear infinite;
+        }
+        .hero-ring::before {
+            content: '';
+            position: absolute;
+            top: -3px; left: 50%;
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(165,28,48,0.5);
+        }
+        .hero-ring-2 {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(550px, 85vw, 1150px);
+            height: clamp(550px, 85vw, 1150px);
+            border: 1px solid rgba(165,28,48,0.04);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: spin-slow 90s linear infinite reverse;
+        }
+        .hero-ring-2::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: 50%;
+            width: 4px; height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        @keyframes spin-slow {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Floating data tickers on the sides */
+        .hero-ticker {
+            position: absolute;
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            color: rgba(165,28,48,0.25);
+            letter-spacing: 0.1em;
+            pointer-events: none;
+            writing-mode: vertical-rl;
+            z-index: 0;
+        }
+        .hero-ticker.left {
+            left: 3vw;
+            top: 30vh;
+            animation: ticker-fade 4s ease-in-out infinite;
+        }
+        .hero-ticker.right {
+            right: 3vw;
+            bottom: 30vh;
+            animation: ticker-fade 4s ease-in-out 2s infinite;
+        }
+        @keyframes ticker-fade {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
         .hero-tagline {
             font-family: var(--font-mono);
@@ -451,7 +528,7 @@
         }
         footer .footer-mark { width: 20px; height: 20px; }
         footer .footer-name {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.02em;
@@ -501,6 +578,8 @@
         <section class="hero">
             <div class="hero-glow"></div>
             <div class="hero-watermark"><img src="public/images/theras-logo.png" alt=""></div>
+            <div class="hero-ring"></div>
+            <div class="hero-ring-2"></div>
             <div class="hero-lines"></div>
             <div class="hero-corner tl"></div>
             <div class="hero-corner tr"></div>
@@ -510,7 +589,11 @@
             <div class="hero-dot"></div>
             <div class="hero-dot"></div>
             <div class="hero-dot"></div>
+            <div class="hero-dot"></div>
+            <div class="hero-dot"></div>
             <div class="hero-scanline"></div>
+            <div class="hero-ticker left">INFERENCE // HARDWIRED // 2026</div>
+            <div class="hero-ticker right">PARAMETERS // IN // METAL</div>
             <div class="hero-inner">
                 <div class="hero-brand">Theras<span class="accent">AI</span></div>
                 <p class="hero-tagline">Reimagining inference.</p>
