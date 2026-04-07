@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theras AI</title>
-    <meta name="description" content="Theras AI — Next-generation inference hardware.">
+    <title>TherasAI</title>
+    <meta name="description" content="TherasAI — Inference, reimagined.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
         
@@ -23,7 +23,6 @@
             --accent: #a51c30;
             --accent-light: #c42038;
             --accent-glow: rgba(165, 28, 48, 0.12);
-            --accent-subtle: rgba(165, 28, 48, 0.06);
             --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'Space Mono', 'SF Mono', monospace;
         }
@@ -36,10 +35,9 @@
             color: var(--text-primary);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ---- Animated Circuit Background ---- */
+        /* ---- Circuit Background ---- */
         #circuit-bg {
             position: fixed;
             top: 0; left: 0;
@@ -48,7 +46,6 @@
             pointer-events: none;
         }
 
-        /* ---- Page ---- */
         .page { position: relative; z-index: 1; }
 
         /* ---- Nav ---- */
@@ -72,20 +69,11 @@
         }
         .logo-mark {
             width: 36px; height: 36px;
-            position: relative;
-        }
-        .logo-mark svg {
-            width: 100%; height: 100%;
         }
         .logo-text {
             font-size: 1.3rem;
             font-weight: 600;
             letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
-        .logo-text .ai {
-            color: var(--text-dim);
-            font-weight: 400;
         }
         .nav-links {
             display: flex;
@@ -119,93 +107,74 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 3rem 4rem;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
         .hero-glow {
             position: absolute;
-            top: 40%; left: 50%;
+            top: 45%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 700px; height: 700px;
+            width: 600px; height: 600px;
             background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
             border-radius: 50%;
             filter: blur(100px);
             animation: glow-pulse 8s ease-in-out infinite;
         }
         @keyframes glow-pulse {
-            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.15); }
+            0%, 100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.15); }
         }
         .hero-inner {
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 800px;
         }
-        .hero-label {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-light);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            opacity: 0;
-            animation: fadeIn 0.8s ease 0.2s forwards;
-        }
-        .hero-label::before {
-            content: '';
-            width: 32px; height: 1px;
-            background: var(--accent);
-        }
-        .hero h1 {
-            font-size: clamp(3.5rem, 7vw, 6rem);
+        .hero-brand {
+            font-size: clamp(4rem, 10vw, 8rem);
             font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fadeIn 0.8s ease 0.4s forwards;
+            animation: fadeIn 1s ease 0.2s forwards;
         }
-        .hero h1 em {
-            font-style: normal;
+        .hero-brand .accent {
             color: var(--accent-light);
         }
-        .hero-sub {
-            font-size: 1.15rem;
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             color: var(--text-secondary);
-            line-height: 1.75;
-            max-width: 550px;
             font-weight: 300;
+            letter-spacing: 0.02em;
             margin-bottom: 3rem;
             opacity: 0;
-            animation: fadeIn 0.8s ease 0.6s forwards;
+            animation: fadeIn 1s ease 0.5s forwards;
         }
         .hero-cta {
             opacity: 0;
-            animation: fadeIn 0.8s ease 0.8s forwards;
+            animation: fadeIn 1s ease 0.8s forwards;
         }
         .hero-cta a {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1rem 2.25rem;
+            padding: 0.875rem 2rem;
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             text-decoration: none;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
             border-radius: 4px;
             transition: all 0.3s;
         }
         .hero-cta a:hover {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 0 40px var(--accent-glow);
+            border-color: var(--accent);
+            color: var(--text-primary);
         }
         .hero-cta a .arrow { transition: transform 0.3s; }
         .hero-cta a:hover .arrow { transform: translateX(4px); }
@@ -215,13 +184,51 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ---- Horizontal Rule ---- */
+        /* ---- Dividers ---- */
         .hr {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--border-light), transparent);
         }
 
-        /* ---- Numbered Sections (Link Ventures style) ---- */
+        /* ---- Thesis Section ---- */
+        .thesis {
+            padding: 6rem 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px; height: 1px;
+            background: var(--text-dim);
+        }
+        .thesis h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .thesis p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+        .thesis p:last-child { margin-bottom: 0; }
+
+        /* ---- Features ---- */
         .features {
             padding: 6rem 3rem;
             max-width: 1100px;
@@ -241,9 +248,7 @@
             background: var(--bg-secondary);
             transition: background 0.3s;
         }
-        .feature-card:hover {
-            background: var(--bg-hover);
-        }
+        .feature-card:hover { background: var(--bg-hover); }
         .feature-num {
             font-family: var(--font-mono);
             font-size: 0.7rem;
@@ -252,51 +257,14 @@
             margin-bottom: 1.5rem;
         }
         .feature-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
         }
         .feature-card p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
             line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* ---- About ---- */
-        .about {
-            padding: 6rem 3rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .about-label {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .about-label::before {
-            content: '';
-            width: 24px; height: 1px;
-            background: var(--text-dim);
-        }
-        .about h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-        .about p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
             font-weight: 300;
         }
 
@@ -314,10 +282,9 @@
             margin-bottom: 1.25rem;
         }
         .backed-name {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-secondary);
-            letter-spacing: -0.01em;
         }
         .backed-name a {
             color: var(--text-secondary);
@@ -332,7 +299,7 @@
             text-align: center;
         }
         .contact h2 {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 1rem;
@@ -351,7 +318,7 @@
             color: white;
             text-decoration: none;
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             border-radius: 4px;
@@ -375,28 +342,21 @@
             align-items: center;
             gap: 0.5rem;
         }
-        footer .footer-mark {
-            width: 20px; height: 20px;
-        }
-        footer .footer-name {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
+        footer .footer-mark { width: 20px; height: 20px; }
+        footer .footer-name { font-size: 0.8rem; font-weight: 500; }
         footer .footer-copy {
             font-family: var(--font-mono);
             font-size: 0.65rem;
             color: var(--text-dim);
-            letter-spacing: 0.05em;
         }
 
-        /* ---- Responsive ---- */
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
             .nav-links { display: none; }
             .hero { padding: 7rem 1.5rem 3rem; }
             .features { padding: 3rem 1.5rem; }
             .features-grid { grid-template-columns: 1fr; }
-            .about { padding: 3rem 1.5rem; }
+            .thesis { padding: 3rem 1.5rem; }
             .contact { padding: 3rem 1.5rem; }
             footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
         }
@@ -409,7 +369,6 @@
         <!-- Nav -->
         <nav>
             <div class="nav-left">
-                <!-- Logo: stylized theta / circuit mark -->
                 <div class="logo-mark">
                     <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="2" width="32" height="32" rx="6" stroke="#a51c30" stroke-width="1.5" fill="none"/>
@@ -421,10 +380,10 @@
                         <line x1="27" y1="18" x2="34" y2="18" stroke="#a51c30" stroke-width="1" opacity="0.5"/>
                     </svg>
                 </div>
-                <div class="logo-text">Theras<span class="ai">AI</span></div>
+                <div class="logo-text">TherasAI</div>
             </div>
             <div class="nav-links">
-                <a href="#about">About</a>
+                <a href="#thesis">About</a>
                 <a href="#contact" class="cta-nav">Contact</a>
             </div>
         </nav>
@@ -433,18 +392,39 @@
         <section class="hero">
             <div class="hero-glow"></div>
             <div class="hero-inner">
-                <div class="hero-label">Next-Generation Hardware</div>
-                <h1>Inference,<br><em>reimagined.</em></h1>
-                <p class="hero-sub">
-                    We're building hardware where the weights never leave the silicon.
-                </p>
+                <div class="hero-brand">Theras<span class="accent">AI</span></div>
+                <p class="hero-tagline">Inference, reimagined.</p>
                 <div class="hero-cta">
-                    <a href="#contact">
+                    <a href="#thesis">
                         Learn More
-                        <span class="arrow">→</span>
+                        <span class="arrow">↓</span>
                     </a>
                 </div>
             </div>
+        </section>
+
+        <div class="hr"></div>
+
+        <!-- Thesis -->
+        <section class="thesis" id="thesis">
+            <div class="section-label">Our Thesis</div>
+            <h2>Training happens once.<br>Inference happens forever.</h2>
+            <p>
+                Today's AI infrastructure runs inference on hardware designed for training — 
+                general-purpose chips that spend most of their energy just moving data around. 
+                But once a model is trained, its core parameters converge. The fundamental 
+                representations stabilize. The weights don't change.
+            </p>
+            <p>
+                TherasAI is building inference hardware that exploits this insight. We encode 
+                stable model parameters directly into the metal interconnect layers of the chip — 
+                eliminating the memory wall entirely. No DRAM reads. No bandwidth bottleneck. 
+                Weights become part of the silicon itself.
+            </p>
+            <p>
+                The result is inference that's orders of magnitude faster and more energy-efficient — 
+                at a fraction of the cost per token.
+            </p>
         </section>
 
         <div class="hr"></div>
@@ -454,33 +434,20 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-num">01</div>
-                    <h3>Hard-Wired Parameters</h3>
-                    <p>Model weights encoded directly into the metal layers of the chip. No memory reads. No bandwidth wall.</p>
+                    <h3>Parameters in Metal</h3>
+                    <p>Core model weights are physically encoded in the final metal layers during fabrication. The chip doesn't read the weights — it <em>is</em> the weights.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">02</div>
-                    <h3>Inference-Native Silicon</h3>
-                    <p>Every transistor dedicated to the forward pass. Purpose-built for the 95% of compute that matters.</p>
+                    <h3>Weeks, Not Years</h3>
+                    <p>Base dies are pre-fabricated in bulk. Only the final metal layers are customized per model — taking the timeline from 18 months to weeks.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">03</div>
-                    <h3>Orders of Magnitude</h3>
-                    <p>Faster. Cheaper. Cooler. When weights are permanent, everything about inference gets fundamentally better.</p>
+                    <h3>The 95% Problem</h3>
+                    <p>Training is 5% of total AI compute. Inference is the other 95% — and it's running on hardware that wasn't built for it. We're building hardware that is.</p>
                 </div>
             </div>
-        </section>
-
-        <div class="hr"></div>
-
-        <!-- About -->
-        <section class="about" id="about">
-            <div class="about-label">About</div>
-            <h2>Training happens once.<br>Inference happens forever.</h2>
-            <p>
-                Theras AI is building the next generation of inference hardware — where model parameters are permanently 
-                encoded in silicon. We're working at the intersection of chip architecture, ML systems, and 
-                materials science to eliminate the most fundamental bottleneck in AI deployment.
-            </p>
         </section>
 
         <div class="hr"></div>
@@ -498,11 +465,10 @@
         <!-- Contact -->
         <section class="contact" id="contact">
             <h2>Get in touch</h2>
-            <p>Interested in what we're building? We'd love to hear from you.</p>
+            <p>Interested in what we're building?</p>
             <div class="contact-cta">
                 <a href="https://www.linkventures.com" target="_blank" rel="noopener">
-                    Link Ventures
-                    <span class="arrow">→</span>
+                    Link Ventures →
                 </a>
             </div>
         </section>
@@ -517,19 +483,19 @@
                         <line x1="9" y1="18" x2="27" y2="18" stroke="#a51c30" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <span class="footer-name">Theras AI</span>
+                <span class="footer-name">TherasAI</span>
             </div>
-            <div class="footer-copy">© 2026 Theras AI. All rights reserved.</div>
+            <div class="footer-copy">© 2026 TherasAI. All rights reserved.</div>
         </footer>
     </div>
 
-    <!-- Circuit background animation -->
+    <!-- Circuit background -->
     <script>
         const canvas = document.getElementById('circuit-bg');
         const ctx = canvas.getContext('2d');
         let nodes = [];
         let mouse = { x: null, y: null };
-        const ACCENT = { r: 165, g: 28, b: 48 };
+        const AC = { r: 165, g: 28, b: 48 };
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -539,21 +505,20 @@
 
         function initNodes() {
             nodes = [];
-            const spacing = 80;
-            const cols = Math.ceil(canvas.width / spacing) + 1;
-            const rows = Math.ceil(canvas.height / spacing) + 1;
+            const sp = 90;
+            const cols = Math.ceil(canvas.width / sp) + 1;
+            const rows = Math.ceil(canvas.height / sp) + 1;
             for (let i = 0; i < cols; i++) {
                 for (let j = 0; j < rows; j++) {
-                    // Offset every other row for hex-like pattern
-                    const offsetX = j % 2 === 0 ? 0 : spacing / 2;
+                    const ox = j % 2 === 0 ? 0 : sp / 2;
                     nodes.push({
-                        x: i * spacing + offsetX,
-                        y: j * spacing,
-                        baseX: i * spacing + offsetX,
-                        baseY: j * spacing,
-                        opacity: Math.random() * 0.15 + 0.02,
-                        pulseSpeed: Math.random() * 0.002 + 0.001,
-                        pulseOffset: Math.random() * Math.PI * 2,
+                        x: i * sp + ox,
+                        y: j * sp,
+                        bx: i * sp + ox,
+                        by: j * sp,
+                        op: Math.random() * 0.12 + 0.02,
+                        ps: Math.random() * 0.002 + 0.001,
+                        po: Math.random() * Math.PI * 2,
                     });
                 }
             }
@@ -564,35 +529,27 @@
         window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
         window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
-        let time = 0;
+        let t = 0;
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            time++;
+            t++;
 
-            // Draw connections first
             for (let i = 0; i < nodes.length; i++) {
                 const a = nodes[i];
                 for (let j = i + 1; j < nodes.length; j++) {
                     const b = nodes[j];
                     const dx = a.x - b.x;
                     const dy = a.y - b.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 100) {
-                        let opacity = (1 - dist / 100) * 0.04;
-                        
-                        // Brighten near mouse
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 110) {
+                        let op = (1 - d / 110) * 0.035;
                         if (mouse.x !== null) {
-                            const mx = (a.x + b.x) / 2;
-                            const my = (a.y + b.y) / 2;
+                            const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
                             const md = Math.sqrt((mouse.x - mx) ** 2 + (mouse.y - my) ** 2);
-                            if (md < 200) {
-                                opacity += (1 - md / 200) * 0.08;
-                            }
+                            if (md < 180) op += (1 - md / 180) * 0.07;
                         }
-
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
-                        // Circuit-style: L-shaped connections
                         if (Math.abs(dx) > Math.abs(dy)) {
                             ctx.lineTo(b.x, a.y);
                             ctx.lineTo(b.x, b.y);
@@ -600,43 +557,37 @@
                             ctx.lineTo(a.x, b.y);
                             ctx.lineTo(b.x, b.y);
                         }
-                        ctx.strokeStyle = `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, ${opacity})`;
+                        ctx.strokeStyle = `rgba(${AC.r},${AC.g},${AC.b},${op})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
                 }
             }
 
-            // Draw nodes
-            nodes.forEach(node => {
-                let pulse = Math.sin(time * node.pulseSpeed + node.pulseOffset) * 0.5 + 0.5;
-                let opacity = node.opacity + pulse * 0.08;
-                let size = 1 + pulse * 0.5;
-
-                // Mouse proximity effect
+            nodes.forEach(n => {
+                let p = Math.sin(t * n.ps + n.po) * 0.5 + 0.5;
+                let op = n.op + p * 0.06;
+                let sz = 1 + p * 0.4;
                 if (mouse.x !== null) {
-                    const dx = mouse.x - node.x;
-                    const dy = mouse.y - node.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 200) {
-                        const force = (1 - dist / 200);
-                        opacity += force * 0.3;
-                        size += force * 1.5;
-                        // Slight displacement
-                        node.x = node.baseX - dx * force * 0.03;
-                        node.y = node.baseY - dy * force * 0.03;
+                    const dx = mouse.x - n.x, dy = mouse.y - n.y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 180) {
+                        const f = 1 - d / 180;
+                        op += f * 0.25;
+                        sz += f * 1.2;
+                        n.x = n.bx - dx * f * 0.025;
+                        n.y = n.by - dy * f * 0.025;
                     } else {
-                        node.x += (node.baseX - node.x) * 0.05;
-                        node.y += (node.baseY - node.y) * 0.05;
+                        n.x += (n.bx - n.x) * 0.05;
+                        n.y += (n.by - n.y) * 0.05;
                     }
                 } else {
-                    node.x += (node.baseX - node.x) * 0.05;
-                    node.y += (node.baseY - node.y) * 0.05;
+                    n.x += (n.bx - n.x) * 0.05;
+                    n.y += (n.by - n.y) * 0.05;
                 }
-
                 ctx.beginPath();
-                ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, ${opacity})`;
+                ctx.arc(n.x, n.y, sz, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${AC.r},${AC.g},${AC.b},${op})`;
                 ctx.fill();
             });
 
