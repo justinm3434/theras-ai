@@ -239,53 +239,7 @@
             100% { top: 90%; opacity: 0; }
         }
 
-        /* Rotating ring around the watermark logo */
-        .hero-ring {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(450px, 70vw, 950px);
-            height: clamp(450px, 70vw, 950px);
-            border: 1px solid rgba(165,28,48,0.08);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            animation: spin-slow 60s linear infinite;
-        }
-        .hero-ring::before {
-            content: '';
-            position: absolute;
-            top: -3px; left: 50%;
-            width: 6px; height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(165,28,48,0.5);
-        }
-        .hero-ring-2 {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(550px, 85vw, 1150px);
-            height: clamp(550px, 85vw, 1150px);
-            border: 1px solid rgba(165,28,48,0.04);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            animation: spin-slow 90s linear infinite reverse;
-        }
-        .hero-ring-2::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: 50%;
-            width: 4px; height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-        @keyframes spin-slow {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
+
 
         /* Floating data tickers on the sides */
         .hero-ticker {
@@ -565,8 +519,7 @@
         <section class="hero">
             <div class="hero-glow"></div>
             <div class="hero-watermark"><img src="public/images/theras-logo.png" alt=""></div>
-            <div class="hero-ring"></div>
-            <div class="hero-ring-2"></div>
+
             <div class="hero-lines"></div>
             <div class="hero-corner tl"></div>
             <div class="hero-corner tr"></div>
